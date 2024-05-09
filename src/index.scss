@@ -1,2 +1,14 @@
-// Include pyxis module
-@use "@pyxis/scss/src/scss/pyxis";
+// Include all pyxis style
+@use "@pyxis/scss/src/scss/pyxis" as pyxis;
+
+// Pyxis uses apply font-family to :root element
+// but it doesn't work inside shadow DOM
+@use "@pyxis/scss/src/scss/foundations/_typography.scss" as typography;
+
+// https://developer.mozilla.org/en-US/docs/Web/CSS/:host
+:host {
+    @include typography.globalSettings();
+    box-sizing: border-box;
+    color: pyxis.color(neutralBase);
+    overflow-x: hidden;
+}
