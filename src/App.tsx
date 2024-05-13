@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Button } from '@pyxis/react';
+import Row from './Row';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -10,6 +11,7 @@ function App() {
       <Button onClick={() => setCount((count) => count + 1)}>
         count is {count}
       </Button>
+      <Row></Row>
 
     </>
   )
